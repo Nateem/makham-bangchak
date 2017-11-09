@@ -1,0 +1,56 @@
+<div ng-controller="reportDetailController">
+    <div class="page-title">
+        <div class="title_left" ng-include="'./template/title_left.html'"></div>
+        <div class="title_right">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> เครื่องมือ</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <form name="formControl">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ระหว่างวันที่</label>
+                                    <input type="date" name="iDateStart" id="iDateStart" ng-model="form.DateStart" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ถึง</label>
+                                    <input type="date" name="iDateEnd" id="iDateEnd" ng-model="form.DateEnd" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" ng-click="reloadData()" class="btn btn-primary pull-right">
+                                <i class="fa fa-check"></i> ตกลง
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> ข้อมูล</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance" class="row-border hover table table-striped jambo_table bulk_action">
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

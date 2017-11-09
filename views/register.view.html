@@ -1,0 +1,145 @@
+<style>
+form .progress {
+    line-height: 15px;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+</style>
+<div ng-controller="registerController">
+	<div class="page-title">
+      <div class="title_left" ng-include="'./template/title_left.html'"></div>
+      <div class="title_right">
+        
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2> กรอกแล้วมีกิน <small>กรุณากรอกฟอร์มให้ครบถ้วน</small></h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form name="registerForm" ng-submit="registerFormSubmit();"  class="form-horizontal">            	
+            	
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="prefix">คำนำหน้า : </label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<select name="prefix" id="prefix" ng-model="user.prefixSelect" class="form-control" required>
+							<option value="" selected>----กรุณาเลือก----</option>
+							<option ng-repeat="p in prefixRepeat" value="{{p.PREFIX_ID}}"  ng-selected="selected">{{p.PREFIX}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="fname">ชื่อ : {{user.fname}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="fname" id="fname" ng-model="user.fname" class="form-control" placeholder="ชื่อ" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="lname">นามสกุล : {{user.lname}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="lname" id="lname" ng-model="user.lname" class="form-control" placeholder="นามสกุล" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="id13">เลข ปชช. : {{user.id13}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="id13" id="id13" ng-model="user.id13" class="form-control" placeholder="เลข ปชช." required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="TEL">โทรศัพท์ : {{user.TEL}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="TEL" id="TEL" ng-model="user.TEL" class="form-control" placeholder="โทรศัพท์" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="idPGS">รหัส PGS : {{user.idPGS}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="idPGS" id="idPGS" ng-model="user.idPGS" class="form-control" placeholder="รหัส PGS">	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="province">ที่อยู่ จ. : </label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<select name="province" id="province" ng-model="user.provinceSelect" class="form-control" ng-change="SelectProvinceChange()" required>
+							<option value="" selected>-เลือกจังหวัด-</option>
+							<option ng-repeat="p in provinceRepeat" value="{{p.PROVINCE_ID}}" ng-selected="selected">{{p.PROVINCE_NAME}}</option>
+						</select>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="amphur">อ. : </label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<select name="amphur" id="amphur" ng-model="user.amphurSelect" class="form-control" ng-change="SelectAmphurChange()" required>
+							<option value="" selected>-เลือกอำเภอ-</option>
+							<option ng-repeat="p in amphurRepeat" value="{{p.AMPHUR_ID}}" ng-selected="selected">{{p.AMPHUR_NAME}}</option>
+						</select>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="district">ต. : </label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<select name="district" id="district" ng-model="user.districtSelect" class="form-control" required>
+							<option value="" selected>-เลือกตำบล-</option>
+							<option ng-repeat="p in districtRepeat" value="{{p.DISTRICT_ID}}" ng-selected="selected">{{p.DISTRICT_NAME}}</option>
+						</select>
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="career1">อาชีพหลัก : {{user.career1}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="career1" id="career1" ng-model="user.career1" class="form-control" placeholder="อาชีพหลัก" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="career2">อาชีพเสริม : {{user.career2}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="career2" id="career2" ng-model="user.career2" class="form-control" placeholder="อาชีพเสริม" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="inpUsername">Username : {{user.inpUsername}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input name="inpUsername" id="inpUsername" ng-model="user.inpUsername" class="form-control" placeholder="กำหนด Username" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+					<label class="col-md-2 col-sm-4 col-xs-12 control-label" for="inpPassword">Password : {{user.inpPassword}}</label>
+					<div class="col-md-10 col-sm-8 col-xs-12">
+						<input type="password" name="inpPassword" id="inpPassword" ng-model="user.inpPassword" class="form-control" placeholder="กำหนดรหัสผ่าน" required>	
+					</div>			
+				</div>
+				<div class="form-group form-group-lg">
+			    	<label for="imgForProfile">รูปภาพประจำตัว</label>
+			    	<input type="file" name="imgForProfile" id="imgForProfile" ng-model="imgForProfile" ngf-select accept="image/*" ngf-max-size="2MB" class="form-control">
+			    </div>
+			    <i ng-show="registerForm.imgForProfile.$error.maxSize">File too large 
+      			{{errorFile.size / 1000000|number:1}}MB: max 2M
+      			</i>
+			    <span class="progress col-xs-12" ng-show="progress > 0" ng-hide="progress == 100">
+				        <div  style="width:{{progress}}%" ng-bind="progress + '%'">				            	
+				        </div>
+				</span>
+				<hr>
+				<div class="{{alert.CLASS}}" ng-show="delay">
+					<span>{{alert.MSG}}</span>
+				</div>
+				
+				<button type="submit" ng-disabled="registerForm.$invalid" ng-click="SetDelay(4000);" class="btn btn-primary btn-lg btn-block">ลงทะเบียน</button>
+				
+			</form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>	
+

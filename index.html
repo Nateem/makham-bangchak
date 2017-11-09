@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-init="appName={'TH':'สะสมยอด','EN':'OIL Base'}">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="appName.EN + ' | ' + globals.stateName">Oil Base</title>
+    <!-- Icon Web -->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/logo/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/logo/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/logo/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/logo/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/logo/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/logo/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/logo/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/logo/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/logo/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logo/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/logo/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap -->
+    <link href="./plugins/gentelella-master/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./plugins/gentelella-master/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="./plugins/gentelella-master/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="./plugins/gentelella-master/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="./plugins/gentelella-master/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <!-- input tag -->
+    <link href="./scripts/ng-tags-input.bootstrap.min.css" rel="stylesheet">
+    <link href="./scripts/ng-tags-input.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="./plugins/gentelella-master/build/css/custom.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="./plugins/gentelella-master/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="./plugins/gentelella-master/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- app -->
+    <link rel="stylesheet" href="./css/font-face.css">
+    <link href="./css/app.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col menu_fixed footer_fixed">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="#" ui-sref="home" class="site_title"><img src="./img/logo/%5BOriginal%5Dlogo_color.png" width="40px" alt="logo"> <span ng-bind="appName.EN"></span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile" ng-show="globals.currentDATA.FULLNAME" ng-cloak>
+                        <div class="profile_pic">
+                            <img ng-src="./img/profiles/{{globals.currentDATA.PIC_}}" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2 ng-bind="globals.currentDATA.FULLNAME"></h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu" ng-controller="menu_navbar" ng-cloak>
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li ng-repeat="m in menu" ng-if="m.name" ng-show="!m.menu_hide" ui-sref-active="current-page active">
+                                    <a ui-sref="{{m.name}}" class="link">
+                                        <img ng-src="{{m.ICO_CLASS}}" class="icon-sm" alt="{{m.TH_name}}">&nbsp; {{m.TH_name}}
+                                    </a>
+                                </li>
+                                <li ng-repeat="m in menu" ng-if="!m.name">
+                                    <a><img ng-src="{{m.ICO_CLASS}}" class="icon-sm" alt="{{m.TH_name}}"> {{m.TH_name}} <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li ng-repeat="mm in m.dropdown" ng-if="mm.name" ng-show="!mm.menu_hide" ui-sref-active="current-page active">
+                                            <a ui-sref="{{mm.name}}" class="link">{{mm.TH_name}}</a>
+                                        </li>
+                                        <li ng-repeat="mm in m.dropdown" ng-if="!mm.name">
+                                            <a>{{mm.TH_name}} <span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li ng-repeat="mmm in mm.dropdown" ng-show="!mmm.menu_hide" ui-sref-active="current-page active">
+                                                    <a ui-sref="{{mmm.name}}" class="link">{{mmm.TH_name}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small" ng-controller="sidebar-footer">
+                        <a data-toggle="tooltip" data-placement="top" title="ข้อมูลส่วนตัว">
+                            <span class="fa fa-user" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen" ng-click="toggleFullScreen();">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a ui-sref="login" data-toggle="tooltip" data-placement="top" title="ออกจากระบบ">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right" ng-show="globals.currentDATA.FULLNAME" ng-cloak>
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img ng-src="./img/profiles/{{globals.currentDATA.PIC_}}" alt="">{{globals.currentDATA.FULLNAME}}
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li class="disabled"><a href="javascript:;" disabled> Profile</a></li>
+                                    <!--<li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    -->
+                                    <li><a ui-sref="login"><i class="fa fa-sign-out pull-right"></i> ออกจากระบบ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <span us-spinner="{radius:30, width:8, length: 16 ,color: '#e8175d', hwaccel: true}"></span>
+                <ui-view autoscroll="true"></ui-view>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                Copyright © 2016
+                <div class="pull-right">
+                    สหกรณ์การเกษตรมะขาม จำกัด
+                    <img src="./img/logo/%5BOriginal%5Dlogo_color.png" width="20px" alt="สหกรณ์การเกษตรมะขาม จำกัด">
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="./plugins/gentelella-master/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Datatables -->
+    <script src="./plugins/gentelella-master/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="./plugins/gentelella-master/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <!-- Chart -->
+    <script src="scripts/Chart.min.js"></script>
+    <!-- angularjs -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-chart.min.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
+    <script src="scripts/angular-cookies.min.js"></script>
+    <script src="scripts/angular-pnotify.js"></script>
+    <script src="scripts/ng-file-upload-shim.js"></script>
+    <script src="scripts/ng-file-upload.js"></script>
+    <script src="scripts/ng-tags-input.min.js"></script>
+    <script src="scripts/angular-qrcode.js"></script>
+    <script src="scripts/angular-ckeditor.js"></script>
+    <script src="scripts/angular-spinner.min.js"></script>
+    <script src="scripts/angular-loading-spinner.js"></script>
+    <script src="plugins/angular-datatables-master/dist/angular-datatables.min.js"></script>
+    <script src="plugins/angular-datatables-master/dist/plugins/buttons/angular-datatables.buttons.min.js"></script>
+    <!--myapp-->
+    <script src="scripts/app.js"></script>
+    <script src="filter/Bytes.js"></script>
+    <script src="filter/thaidate.js"></script>
+    <script src="filter/percentage.js"></script>
+    <script src="modules/authentication/services.js"></script>
+    <script src="modules/authentication/controllers.js"></script>
+    <script src="controllers/index.controller.js"></script>
+    <script src="controllers/home.controller.js"></script>
+    <script src="controllers/register.controller.js"></script>
+    <script src="controllers/oil.controller.js"></script>
+    <script src="controllers/edit.controller.js"></script>
+    <script src="controllers/reportSum.controller.js"></script>
+    <script src="controllers/reportDetail.controller.js"></script>
+    <script src="controllers/reportGroup.controller.js"></script>
+    <script src="controllers/addUser.controller.js"></script>
+    <script src="controllers/setCustomer.controller.js"></script>
+    <script src="controllers/searchCustomer.controller.js"></script>
+    <script src="controllers/error404.controller.js"></script>
+    <!-- spin -->
+    <script type="text/javascript" src="./plugins/js/spin.min.js"></script>
+    <!-- CKEditor-->
+    <script type="text/javascript" src="./plugins/ckeditor/ckeditor.js"></script>
+    <!-- Qr Code -->
+    <script src="./plugins/bower-qrcode-generator/js/qrcode.js"></script>
+    <script src="./plugins/bower-qrcode-generator/js/qrcode_UTF8.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/gentelella-master/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="./plugins/gentelella-master/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="./plugins/gentelella-master/vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="./plugins/gentelella-master/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="./plugins/gentelella-master/vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="./plugins/gentelella-master/production/js/moment/moment.min.js"></script>
+    <script src="./plugins/gentelella-master/production/js/datepicker/daterangepicker.js"></script>
+    <!-- Switchery -->
+    <script src="./plugins/gentelella-master/vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="./plugins/gentelella-master/vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- PNotify -->
+    <script src="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.confirm.js"></script>
+    <script src="./plugins/gentelella-master/vendors/pnotify/dist/pnotify.nonblock.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="./plugins/gentelella-master/build/js/custom.min.js"></script>
+</body>
+
+</html>

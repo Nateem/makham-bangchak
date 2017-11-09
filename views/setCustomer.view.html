@@ -1,0 +1,81 @@
+<div ng-controller="setCustomerController as showCase">
+    <div class="page-title">
+        <div class="title_left" ng-include="'./template/title_left.html'"></div>
+        <div class="title_right">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> จัดการ</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h2>{{detail}}</h2>
+                    <form name="formSetting">
+                        <input type="hidden" name="iID" ng-model="form.ID">
+                        <div class="form-group">
+                            <label>รหัสสมาชิก<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="text" maxlength="7" name="iMASCODE" id="iMASCODE" ng-model="form.MASCODE" class="form-control input-lg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>กลุ่ม<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="text" maxlength="7" name="iAUMNO" id="iAUMNO" ng-model="form.AUMNO" class="form-control input-lg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>คำนำหน้า<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="text" name="iSTNA" id="iSTNA" ng-model="form.STNA" class="form-control input-lg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ชื่อ<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="text" name="iNAME" id="iNAME" ng-model="form.NAME" class="form-control input-lg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>นามสกุล<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="text" name="iSURNAME" id="iSURNAME" ng-model="form.SURNAME" class="form-control input-lg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>เบอร์โทรศัพท์<i class="fa fa-asterisk text-danger"></i></label>
+                            <input type="phone" name="iTEL" id="iTEL" ng-model="form.TEL" class="form-control input-lg" required>
+                        </div>
+                        <hr>
+                        
+                        <div class="btn btn-group pull-right" role="group">
+                            <button type="button" ng-click="formSettingSubmit(formSetting,'INSERT')" class="btn btn-primary" ng-disabled="formSetting.$invalid">
+                                <i class="fa fa-save"></i> บันทึกเพิ่ม
+                            </button>
+                            <button type="button" ng-click="formSettingSubmit(formSetting,'UPDATE')" class="btn btn-warning" ng-hide="!form.ID || formSetting.$invalid" ng-disabled="!form.ID || formSetting.$invalid">
+                                <i class="fa fa-edit"></i> บันทึกแก้ไข
+                            </button>
+                            <button type="button" ng-click="deleteData(formSetting,form.ID)" class="btn btn-danger" ng-hide="!form.ID" ng-disabled="!form.ID">
+                                <i class="fa fa-trash-o"></i> ลบ
+                            </button>
+                        </div>
+
+                    </form>
+                    <div ng-if="formSetting.$invalid" class="alert alert-info" role="alert">
+                            <strong>แนะนำ!</strong> กรอกข้อมูลที่มี <i class="fa fa-asterisk text-danger"></i> ให้ครบถ้วน
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> รายการบันทึก </h2>
+                    <span class="pull-right">
+                        <button type="button" ng-click="showCase.reloadData()" class="btn btn-default">
+                            <i class="fa fa-refresh"></i> รีโหลด
+                        </button>
+                    </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table datatable="" dt-options="showCase.dtOptions" dt-columns="showCase.dtColumns" dt-instance="showCase.dtInstance" class="row-border hover table table-striped jambo_table bulk_action"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

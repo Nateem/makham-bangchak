@@ -1,0 +1,251 @@
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Boontook Ultra";
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Ultra.eot");
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Ultra.eot?") format("embedded-opentype"), 
+         url("font/boontook-fonts-1.0.0/woff2/BoonTook-Ultra.woff2") format("woff2"),
+         url("font/boontook-fonts-1.0.0/woff/BoonTook-Ultra.woff") format("woff"), 
+         url("font/boontook-fonts-1.0.0/ttf/BoonTook-Ultra.ttf") format("truetype"), 
+         url("font/boontook-fonts-1.0.0/svg/BoonTook-Ultra.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Boontook Mon Ultra";
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Mon-Ultra.eot");
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Mon-Ultra.eot?") format("embedded-opentype"), 
+         url("font/boontook-fonts-1.0.0/woff2/BoonTook-Mon-Ultra.woff2") format("woff2"),
+         url("font/boontook-fonts-1.0.0/woff/BoonTook-Mon-Ultra.woff") format("woff"), 
+         url("font/boontook-fonts-1.0.0/ttf/BoonTook-Mon-Ultra.ttf") format("truetype"), 
+         url("font/boontook-fonts-1.0.0/svg/BoonTook-Mon-Ultra.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Boontook Ultra Oblique";
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Ultra-Oblique.eot");
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Ultra-Oblique.eot?") format("embedded-opentype"), 
+         url("font/boontook-fonts-1.0.0/woff2/BoonTook-Ultra-Oblique.woff2") format("woff2"),
+         url("font/boontook-fonts-1.0.0/woff/BoonTook-Ultra-Oblique.woff") format("woff"), 
+         url("font/boontook-fonts-1.0.0/ttf/BoonTook-Ultra-Oblique.ttf") format("truetype"), 
+         url("font/boontook-fonts-1.0.0/svg/BoonTook-Ultra-Oblique.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Boontook Mon Ultra Oblique";
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Mon-Ultra-Oblique.eot");
+    src: url("font/boontook-fonts-1.0.0/eot/BoonTook-Mon-Ultra-Oblique.eot?") format("embedded-opentype"), 
+         url("font/boontook-fonts-1.0.0/woff2/BoonTook-Mon-Ultra-Oblique.woff2") format("woff2"),
+         url("font/boontook-fonts-1.0.0/woff/BoonTook-Mon-Ultra-Oblique.woff") format("woff"), 
+         url("font/boontook-fonts-1.0.0/ttf/BoonTook-Mon-Ultra-Oblique.ttf") format("truetype"), 
+         url("font/boontook-fonts-1.0.0/svg/BoonTook-Mon-Ultra-Oblique.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Cloud-Light";
+    src: url("font/Cloud-LightBold/Cloud-Light.eot");
+    src: url("font/Cloud-LightBold/Cloud-Light.eot?") format("embedded-opentype"), 
+         url("font/Cloud-LightBold/Cloud-Light.woff2") format("woff2"),
+         url("font/Cloud-LightBold/Cloud-Light.woff") format("woff"), 
+         url("font/Cloud-LightBold/Cloud-Light.ttf") format("truetype"), 
+         url("font/Cloud-LightBold/Cloud-Light.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Cloud-Bold";
+    src: url("font/Cloud-LightBold/Cloud-Bold.eot");
+    src: url("font/Cloud-LightBold/Cloud-Bold.eot?") format("embedded-opentype"), 
+         url("font/Cloud-LightBold/Cloud-Bold.woff2") format("woff2"),
+         url("font/Cloud-LightBold/Cloud-Bold.woff") format("woff"), 
+         url("font/Cloud-LightBold/Cloud-Bold.ttf") format("truetype"), 
+         url("font/Cloud-LightBold/Cloud-Bold.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Kunlasatri";
+    src: url("font/Kunlasatri/Kunlasatri.eot");
+    src: url("font/Kunlasatri/Kunlasatri.eot?") format("embedded-opentype"), 
+         url("font/Kunlasatri/Kunlasatri.woff2") format("woff2"),
+         url("font/Kunlasatri/Kunlasatri.woff") format("woff"), 
+         url("font/Kunlasatri/Kunlasatri.ttf") format("truetype"), 
+         url("font/Kunlasatri/Kunlasatri.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kunlasatri-Light";
+    src: url("font/Kunlasatri/Kunlasatri-Light.eot");
+    src: url("font/Kunlasatri/Kunlasatri-Light.eot?") format("embedded-opentype"), 
+         url("font/Kunlasatri/Kunlasatri-Light.woff2") format("woff2"),
+         url("font/Kunlasatri/Kunlasatri-Light.woff") format("woff"), 
+         url("font/Kunlasatri/Kunlasatri-Light.ttf") format("truetype"), 
+         url("font/Kunlasatri/Kunlasatri-Light.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kunlasatri-Bold";
+    src: url("font/Kunlasatri/Kunlasatri-Bold.eot");
+    src: url("font/Kunlasatri/Kunlasatri-Bold.eot?") format("embedded-opentype"), 
+         url("font/Kunlasatri/Kunlasatri-Bold.woff2") format("woff2"),
+         url("font/Kunlasatri/Kunlasatri-Bold.woff") format("woff"), 
+         url("font/Kunlasatri/Kunlasatri-Bold.ttf") format("truetype"), 
+         url("font/Kunlasatri/Kunlasatri-Bold.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Quark-Bold";
+    src: url("font/Quark-LightBold/Quark-Bold.eot");
+    src: url("font/Quark-LightBold/Quark-Bold.eot?") format("embedded-opentype"), 
+         url("font/Quark-LightBold/Quark-Bold.woff2") format("woff2"),
+         url("font/Quark-LightBold/Quark-Bold.woff") format("woff"), 
+         url("font/Quark-LightBold/Quark-Bold.ttf") format("truetype"), 
+         url("font/Quark-LightBold/Quark-Bold.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Quark-Light";
+    src: url("font/Quark-LightBold/Quark-Light.eot");
+    src: url("font/Quark-LightBold/Quark-Light.eot?") format("embedded-opentype"), 
+         url("font/Quark-LightBold/Quark-Light.woff2") format("woff2"),
+         url("font/Quark-LightBold/Quark-Light.woff") format("woff"), 
+         url("font/Quark-LightBold/Quark-Light.ttf") format("truetype"), 
+         url("font/Quark-LightBold/Quark-Light.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Supermarket";
+    src: url("font/supermarket-1-1/supermarket.eot");
+    src: url("font/supermarket-1-1/supermarket.eot?") format("embedded-opentype"), 
+         url("font/supermarket-1-1/supermarket.woff2") format("woff2"),
+         url("font/supermarket-1-1/supermarket.woff") format("woff"), 
+         url("font/supermarket-1-1/supermarket.ttf") format("truetype"), 
+         url("font/supermarket-1-1/supermarket.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "WP DOMINO novel";
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.eot");
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.eot?") format("embedded-opentype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.woff2") format("woff2"),
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.woff") format("woff"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.ttf") format("truetype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "WP DOMINO novel Bold";
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.eot");
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.eot?") format("embedded-opentype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.woff2") format("woff2"),
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.woff") format("woff"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.ttf") format("truetype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "WP DOMINO novel italic";
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.eot");
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.eot?") format("embedded-opentype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.woff2") format("woff2"),
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.woff") format("woff"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.ttf") format("truetype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel italic.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "WP DOMINO novel Bold italic";
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.eot");
+    src: url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.eot?") format("embedded-opentype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.woff2") format("woff2"),
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.woff") format("woff"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.ttf") format("truetype"), 
+         url("font/WP_DOMINO_NOVEL_FONTS/WP DOMINO novel Bold italic.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: "sukhumvitset_light";
+    src: url("font/sukhumvitset-light-webfont.eot");
+    src: url("font/sukhumvitset-light-webfont.eot?") format("embedded-opentype"), 
+         url("font/sukhumvitset-light-webfont.woff2") format("woff2"),
+         url("font/sukhumvitset-light-webfont.woff") format("woff"), 
+         url("font/sukhumvitset-light-webfont.ttf") format("truetype"), 
+         url("font/sukhumvitset-light-webfont.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "CS_Cheangkhan";
+    src: url("font/CS-Cheangkhan.eot");
+    src: url("font/CS-Cheangkhan.eot?") format("embedded-opentype"), 
+         url("font/CS-Cheangkhan.woff") format("woff"), 
+         url("font/CS-Cheangkhan.ttf") format("truetype"), 
+         url("font/CS-Cheangkhan.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LayijiSarangheyo";
+    src: url("font/LayijiSarangheyo.eot");
+    src: url("font/LayijiSarangheyo.eot?") format("embedded-opentype"), 
+         url("font/LayijiSarangheyo.woff") format("woff"), 
+         url("font/LayijiSarangheyo.ttf") format("truetype"), 
+         url("font/LayijiSarangheyo.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "bangna-new";
+    src: url("font/bangna-new.eot");
+    src: url("font/bangna-new.eot?") format("embedded-opentype"), 
+         url("font/bangna-new.woff") format("woff"), 
+         url("font/bangna-new.ttf") format("truetype"), 
+         url("font/bangna-new.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Thai_Sans_Lite";
+    src: url("font/thaisanslite_r1.eot");
+    src: url("font/thaisanslite_r1.eot?") format("embedded-opentype"), 
+         url("font/thaisanslite_r1.woff2") format("woff2"),
+         url("font/thaisanslite_r1.woff") format("woff"), 
+         url("font/thaisanslite_r1.ttf") format("truetype"), 
+         url("font/thaisanslite_r1.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family:Thai_Sans_Lite !important;
+    font-size: 200% !important;
+}
+tt, code, kbd, samp {
+    font-family:Thai_Sans_Lite !important;
+}

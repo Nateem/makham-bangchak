@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Thai_Sans_Lite";
+    src: url("font/thaisanslite_r1.eot");
+    src: url("font/thaisanslite_r1.eot?") format("embedded-opentype"), 
+         url("font/thaisanslite_r1.woff2") format("woff2"),
+         url("font/thaisanslite_r1.woff") format("woff"), 
+         url("font/thaisanslite_r1.ttf") format("truetype"), 
+         url("font/thaisanslite_r1.svg#svgFontName") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+html body{
+    font-family: 'Thai_Sans_Lite' !important;
+    font-size: 200% !important;
+}
+h2{
+   font-size: 25px !important;
+}
+.nav-sm .nav.side-menu li a{
+  font-size: 18px !important;
+}
+.nav.child_menu>li>a , h5, .h5 , .dropdown-menu ,.btn{
+    font-size: 20px !important;
+}
+.site_title{
+  font-size: 30px !important;
+}
+.profile_info span,.form-control,td{
+  font-size: 18px !important;
+}

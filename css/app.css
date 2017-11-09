@@ -1,0 +1,77 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+.totalMoney{
+    background-color: #f2f2f2;
+    opacity: 0.9; 
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.right_col {
+    background-color: #ddd;
+    /*background-image: url(../img/bg1.jpg) !important;*/
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
+
+.page-title {
+    text-shadow: 0 0 0.1em #fff, 0 0 0.1em #fff, 0 0 0.1em #fff
+}
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+table thead tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+img.icon-default{
+    width: 40px;
+}
+img.icon-sm{
+    width: 30px;
+}
+img.icon-xs{
+    width: 20px;
+}
+
+ form .form-group{
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+ form .form-group .ng-invalid.ng-dirty {
+   background: #FFEBEE;
+ }
+ form .form-group .ng-valid.ng-dirty {
+   background: #E0F2F1;
+ }
+ date{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    text-shadow: 0 0 0.1em #fff, 0 0 0.1em #fff, 0 0 0.1em #fff
+ }
+ date:hover{
+    cursor: pointer;
+    color: #1A237E;
+ }
+ date:active{
+    color: #1A237E;
+ }
+img.img-bank:hover{
+    border:2px solid red !important;
+}
+img.img-bank:active{
+    border:5px solid red !important;
+}

@@ -1,0 +1,57 @@
+<div ng-controller="editController as showCase">
+    <div class="page-title">
+        <div class="title_left" ng-include="'./template/title_left.html'"></div>
+        <div class="title_right">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-3 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> จัดการ</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h2>{{detail}}</h2>
+                    <form name="formEdit" >
+                        <input type="hidden" name="iID" ng-model="edit.ID">
+                        <div class="form-group">
+                            <label>รหัสสมาชิก</label>
+                            <input ng-disabled="!edit.ID" type="text" name="iCODE" id="iCODE" ng-model="edit.CUS_CODE" class="form-control" placeholder="เฉพาะเลขสมาชิก 5 หลัก" required ng-keyup="chkCode(edit.CUS_CODE)">
+                        </div>
+                        <div class="form-group">
+                            <label>ราคา</label>
+                            <input ng-disabled="!edit.ID" type="number" name="iPRICE" id="iPRICE" ng-model="edit.PRICE" class="form-control" required>
+                        </div>
+                        <hr>
+                        <div class="btn-group pull-right" role="group">
+                            <button type="button" ng-click="formEditSubmit(formEdit)" class="btn btn-primary" ng-disabled="!edit.ID || formEdit.$invalid">
+                                <i class="fa fa-save"></i> บันทึกแก้ไข
+                            </button>
+                            <button type="button" ng-click="deleteData(formEdit,edit.ID)" class="btn btn-danger" ng-disabled="!edit.ID">
+                                <i class="fa fa-trash-o"></i> ยกเลิกรายการ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> รายการบันทึก </h2>
+                    <span class="pull-right">
+                        <button type="button" ng-click="showCase.reloadData()" class="btn btn-default">
+                            <i class="fa fa-refresh"></i> รีโหลด
+                        </button>
+                    </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table datatable="" dt-options="showCase.dtOptions" dt-columns="showCase.dtColumns" dt-instance="showCase.dtInstance" class="row-border hover table table-striped jambo_table bulk_action"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

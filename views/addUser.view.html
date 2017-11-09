@@ -1,0 +1,62 @@
+<div ng-controller="addUserController">
+    <div class="page-title">
+        <div class="title_left" ng-include="'./template/title_left.html'"></div>
+        <div class="title_right">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> กรุณากรอกรายละเอียดให้ครบถ้วน</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <form name="formAddUser" ng-submit="formAddUserSubmit(formAddUser)">
+                        <div class="form-group">
+                            <label>ชื่อ :</label>
+                            <input type="text" name="iFname" id="iFname" ng-model="form.FNAME" class="form-control" placeholder="ชื่อจริง" required>
+                            <span ng-show="formAddUser.iFname.$dirty && formAddUser.iFname.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกรอกชื่อจริง</small></span>
+                        </div>
+                        <div class="form-group">
+                            <label>นามสกุล :</label>
+                            <input type="text" name="iLname" id="iLname" ng-model="form.LNAME" class="form-control" placeholder="นามสกุล" required>
+                            <span ng-show="formAddUser.iLname.$dirty && formAddUser.iLname.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกรอกนามสกุล</small></span>
+                        </div>
+                        <div class="form-group">
+                            <label>ตำแหน่งหน้าที่ :</label>
+                            <input type="text" name="iOffice" id="iOffice" ng-model="form.OFFICE" class="form-control" placeholder="ตำแหน่ง" required>
+                             <span ng-show="formAddUser.iOffice.$dirty && formAddUser.iOffice.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกรอกตำแหน่งหน้าที่</small></span>
+                        </div>
+                        <div class="form-group">
+                            <label>เบอร์โทรศัพท์ :</label>
+                            <input type="phone" name="iTel" id="iTel" ng-model="form.TEL" class="form-control" placeholder="เบอร์ติดต่อ" required>
+                            <span ng-show="formAddUser.iTel.$dirty && formAddUser.iTel.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกรอกเบอร์โทรศัพท์</small></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Username :</label>
+                            <input type="text" name="iUsername" id="iUsername" ng-model="form.USERNAME" class="form-control" placeholder="ใช้ภาษาอังกฤษ**ห้ามเว้นวรรค,ห้ามมีอักขระพิเศษ [a-zA-Z0-9]" required ng-pattern="pattern" ng-minlength="minlength">
+                            <span ng-show="formAddUser.iUsername.$dirty && formAddUser.iUsername.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกำหนด Username เพื่อใช้ Login</small></span>
+                            <span ng-show="formAddUser.iUsername.$error.pattern" class="help-block"><small class="text-danger">**อักขระ ไม่เป็นไปตามที่กำหนด [a-zA-Z0-9]</small></span>
+                            <span ng-show="formAddUser.iUsername.$error.minlength" class="help-block"><small class="text-danger">**กรอกอย่างน้อย {{minlength}} ตัวอักษร</small></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Password :</label>
+                            <input type="phone" name="iPassword" id="iPassword" ng-model="form.PASSWORD" class="form-control" placeholder="ใช้ภาษาอังกฤษ**ห้ามเว้นวรรค [a-z A-Z 0-9]" required ng-pattern="pattern" ng-minlength="minlength">
+                            <span ng-show="formAddUser.iPassword.$dirty && formAddUser.iPassword.$error.required" class="help-block"><small class="text-danger">**จำเป็นต้องกำหนด Password เพื่อใช้ Login</small></span>
+                            <span ng-show="formAddUser.iPassword.$error.pattern" class="help-block"><small class="text-danger">**อักขระ ไม่เป็นไปตามที่กำหนด [a-zA-Z0-9]</small></span>
+                            <span ng-show="formAddUser.iPassword.$error.minlength" class="help-block"><small class="text-danger">**กรอกอย่างน้อย {{minlength}} ตัวอักษร</small></span>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" ng-disabled="formAddUser.$invalid" class="btn btn-danger pull-right">
+                               <i class="fa fa-user-plus"></i> เพิ่มผู้ใช้งาน
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div ng-controller="oilController">
+    <div class="page-title">
+        <div class="title_left" ng-include="'./template/title_left.html'"></div>
+        <div class="title_right">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> รายการบันทึก </h2>
+                    <h2 class="pull-right text-danger">{{dateConvert | thaidate}}</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="row">
+                        <form name="formAddEvent" ng-submit="formSave(formAddEvent)" class="form-horizontal form-label-left input_mask">
+                            <div class="col-xs-4">
+                                <div class="form-group ">
+                                    <label>เติมน้ำมัน(บาท)</label>
+                                    <input type="number" name="PRICE" id="PRICE" class="form-control input-lg" ng-model="form.PRICE" autofocus required onfocus="this.select()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5">
+                                <div class="form-group">
+                                    <label>รหัสสมาชิก : <small>{{detail}}</small></label>
+                                    <div class="input-group">
+                                        
+                                        <input type="text" name="CUS_CODE" id="CUS_CODE" class="form-control input-lg" ng-model="form.CODE" required onfocus="this.select()" placeholder="เฉพาะเลขสมาชิก 5 หลัก" ng-keyup="chkCode(form.CODE)" ng-focus="chkCode(form.CODE)">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-danger btn-lg" ng-click="goSearch('CUS_CODE','CUS_CODE',700,600)">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label></label>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                        <i class="fa fa-save"></i> บันทึก
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-xs-3" ng-repeat="b in [1000,500,100,50,20,10,5,1]" style="padding:2px;">
+                                    <img ng-src="./img/icon/{{b}}.jpg" alt="{{b}}" height="20px" class="img-bank img-thumbnail" ng-click="addBank(b)">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2> ล่าสุดของวันนี้ <small>(โดย {{globals.currentDATA.FULLNAME}})</small></h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ลูกค้า</th>
+                                <th>ราคา</th>
+                                <th>เวลา</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="r in dataRepeat">
+                                <td><code>{{r.GENCODE}}</code> {{r.CUS_FULLNAME}}</td>
+                                <td>{{r.PRICE | currency:"THB "}}</td>
+                                <td>{{r.CURTIME}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

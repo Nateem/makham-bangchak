@@ -1,0 +1,104 @@
+<style>
+  /*==================fieldset======================*/
+  legend a {
+        color: inherit;
+  }
+  legend {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  fieldset {
+   /* font-family: bangna-new;*/
+
+    font-size: small;
+    font-weight: normal;
+    border: 2px dotted #ccc;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  legend {
+    font-size: 90%;
+    color: #888888;
+    background-color: transparent;
+    font-weight: bold;
+  }
+  legend {
+    width: auto;
+    border-bottom: 0px;
+  }
+  /*========================================*/
+</style>
+<div ng-controller="homeController">
+	<div class="page-title">
+      <div class="title_left" ng-include="'./template/title_left.html'"></div>
+      <div class="title_right">
+        
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">          
+          <div class="x_content text-center">
+            <img src="./img/logo/[Original]logo_color.png" width="200px" alt="logo" class="">
+            <ul class="list-unstyled">
+              <li ng-repeat="m in menu">
+
+                <fieldset ng-if="!m.menu_hide">
+                  <legend><h5><small><img ng-src="{{m.ICO_CLASS}}" class="icon-xs" alt="{{m.TH_name}}"> {{m.TH_name}}</small></h5></legend>
+
+                  <ul class="list-unstyled" >
+
+                    <li ng-if="m.name" ng-show="!m.menu_hide">
+                      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" >
+                        <a class="btn btn-danger btn-block link" ui-sref="{{m.name}}">
+                           <i class="fa fa-home"></i> {{m.TH_name}}
+                        </a>
+                      </div>
+                    </li>
+
+                    <li ng-repeat="mm in m.dropdown" ng-if="!m.name">
+                     
+                        <ul class="list-unstyled">
+
+                          <li ng-if="mm.name" ng-show="!mm.menu_hide">
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" >
+                              <a class="btn btn-danger btn-block link" ui-sref="{{mm.name}}">
+                                  <i class="{{mm.ICO_CLASS}}"></i> {{mm.TH_name}}
+                              </a>
+                            </div>
+                          </li>
+
+                          <li ng-repeat="mmm in mm.dropdown" ng-if="!mm.name">
+                             <fieldset>
+                                <legend><h5><small><i class="{{m.ICO_CLASS}}"></i> {{mm.TH_name}}</small></h5></legend>
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" >
+                                  <a class="btn btn-danger btn-block link" ui-sref="{{mmm.name}}">
+                                     <i class="{{mmm.ICO_CLASS}}"></i> {{mmm.TH_name}}
+                                  </a>
+                                </div>
+                              </fieldset>
+                          </li>
+                          
+                        </ul>
+                      
+                    </li>
+
+                    
+
+                  </ul>
+                  
+                </fieldset>
+              </li>	
+            </ul>
+          </div>
+      	</div>
+  	  </div>
+  	</div>
+</div>
